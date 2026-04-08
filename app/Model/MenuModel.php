@@ -8,14 +8,24 @@ namespace Model;
 class MenuModel {
 
     /**
-     * Récupère l'ensemble des plats depuis le fichier JSON de l'API.
+     * Récupère l'ensemble des plats depuis l'API REST.
      *
      * @return array Liste des plats, chaque entrée contenant les clés
      *               'nom', 'description' et 'prix'.
      */
     public function getTousLesPlats(): array {
-        $json = file_get_contents(__DIR__ . '/../../API/plats-utilisateurs.json');
+        $ch = curl_init('http://localhost:3003/plats');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        $json = curl_exec($ch);
+        curl_close($ch);
+
         $data = json_decode($json, true);
-        return $data['plats'];
+
+        if (!is_array($data)) {
+            return [];
+        }
+
+        return $data;
     }
 }
