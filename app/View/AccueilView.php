@@ -1,3 +1,13 @@
+<?php
+/**
+ * Vue de la page d'accueil authentifiée.
+ *
+ * Affiche un message de bienvenue personnalisé avec le prénom et le nom
+ * de l'utilisateur connecté, ainsi que les sections de présentation du restaurant.
+ *
+ * @var array $user Données de l'utilisateur connecté (clés : 'prenom', 'nom').
+ */
+?>
 <!doctype html>
 <html lang="fr">
 <head>

@@ -1,11 +1,32 @@
 <?php
+/**
+ * Page de connexion du site Oh My Burger.
+ *
+ * Démarre la session, traite le formulaire POST en vérifiant
+ * l'adresse mail contre l'API REST locale, puis redirige
+ * l'utilisateur ou affiche un message d'erreur.
+ *
+ * @var string $erreur  Message d'erreur affiché si l'email est introuvable.
+ */
 session_start();
 
 $erreur = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    /**
+     * Adresse mail saisie par l'utilisateur, nettoyée des espaces.
+     *
+     * @var string $adresse_mail_saisie
+     */
     $adresse_mail_saisie = trim($_POST['mail']);
 
+    /**
+     * Récupère la liste de tous les utilisateurs depuis l'API REST.
+     *
+     * @var resource $ch      Handle cURL pointant vers l'endpoint /utilisateurs.
+     * @var string   $json    Réponse brute JSON de l'API.
+     * @var array    $utilisateurs Liste des utilisateurs désérialisés.
+     */
     $ch = curl_init('http://localhost:3003/utilisateurs');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPGET, true);
@@ -14,6 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $utilisateurs = json_decode($json, true);
 
+    /**
+     * Indique si un utilisateur correspondant à l'email a été trouvé.
+     *
+     * @var bool $trouve
+     */
     $trouve = false;
     foreach ($utilisateurs as $utilisateur) {
         if (strtolower($utilisateur['email']) === strtolower($adresse_mail_saisie)) {
@@ -31,7 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
 <!doctype html>
 <html lang="fr">
 <head>
@@ -52,7 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="Header-div">
         <img src="/public/assets/IMAGE/logo.png" class="logo-header" alt="le logo du site" />
         <div class="header-right">
-            <a href="menu.php"><button class="boutton-menu">Menu</button></a>
             <a href="connexion.php"><button class="boutton-connexion">Connexion</button></a>
         </div>
     </div>

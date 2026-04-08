@@ -1,4 +1,10 @@
 <?php
+/**
+ * Page d'accueil statique du site Oh My Burger.
+ *
+ * Affiche la présentation du restaurant, les sections marketing
+ * et les informations de contact dans le footer.
+ */
 ?>
 <!doctype html>
 <html lang="fr">
@@ -20,7 +26,6 @@
     <div class="Header-div">
         <img src="/public/assets/IMAGE/logo.png" class="logo-header" alt="le logo du site" />
         <div class="header-right">
-            <a href="menu.php"><button class="boutton-menu">Menu</button></a>
             <a href="connexion.php"><button  class="boutton-connexion">Connexion</button></a>
         </div>
     </div>

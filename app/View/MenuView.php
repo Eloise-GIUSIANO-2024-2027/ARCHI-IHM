@@ -1,3 +1,17 @@
+<?php
+/**
+ * Vue de la page menu authentifiée.
+ *
+ * Affiche la liste des plats disponibles récupérés depuis l'API,
+ * avec pour chacun son nom, sa description et son prix formaté.
+ *
+ * @var array $plats     Liste des plats à afficher.
+ * @var array $plats[]   Chaque plat contient les clés suivantes :
+ *                       - string 'nom'         Nom du plat.
+ *                       - string 'description' Description du plat.
+ *                       - float  'prix'        Prix du plat en euros.
+ */
+?>
 <!doctype html>
 <html lang="fr">
 <head>
