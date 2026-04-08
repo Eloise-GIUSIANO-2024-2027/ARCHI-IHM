@@ -1,0 +1,20 @@
+:root {
+    --rouge:       #e8222a;
+    --rouge-fonce: #c0181f;
+    --blanc:       #ffffff;
+    --gris-clair:  #f7f4f2;
+    --gris-mid:    #e8e3de;
+    --texte:       #1a1210;
+    --texte-doux:  #5c4a46;
+    --radius:      6px;
+    --transition:  0.25s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--blanc);
+    color: var(--texte);
+    font-family: "Oswald", sans-serif;
+    overflow-x: hidden;
+}

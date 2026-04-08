@@ -1,0 +1,78 @@
+.menu-titre {
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--texte);
+    text-align: center;
+    padding: 3rem 2rem 0.5rem;
+}
+
+.menu-titre::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--rouge);
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
+}
+
+.plats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 900px;
+    margin: 2rem auto 4rem;
+    padding: 0 2rem;
+}
+
+.plat-carte {
+    background: #fff;
+    border-bottom: 1px solid #e0ddd8;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1rem;
+    transition: background 0.2s ease;
+}
+
+.plat-carte:first-child {
+    border-top: 1px solid #e0ddd8;
+}
+
+.plat-carte:hover {
+    background: #faf9f7;
+}
+
+.plat-nom {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--texte);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.plat-desc {
+    font-family: "Oswald", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--texte-doux);
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.plat-prix {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--rouge);
+    white-space: nowrap;
+    margin-left: auto;
+}

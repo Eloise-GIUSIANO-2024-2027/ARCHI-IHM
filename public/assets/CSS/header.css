@@ -1,0 +1,62 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.Header-div {
+    background-color: #f44336;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 15%;
+}
+
+.logo-header {
+    width: 180px;
+    height: 100px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.boutton-connexion {
+    background: #e53539;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: white solid 2px;
+    font-family: "Oswald", sans-serif;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.boutton-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-family: "Oswald", sans-serif;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+
+.boutton-deconnexion {
+    background: #e53539;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: white solid 2px;
+    font-family: "Oswald", sans-serif;
+    transition: background 0.2s, transform 0.1s;
+}
